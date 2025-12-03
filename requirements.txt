@@ -5,5 +5,4 @@ scipy
 torch
 matplotlib
 scikit-learn
-os
 datetime

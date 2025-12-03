@@ -1,8 +1,7 @@
-yfinance
-pandas
-numpy
-scipy
-torch
-matplotlib
-scikit-learn
-datetime
+yfinance>0.2.40
+pandas>=2.1.0
+numpy>=1.24.0
+scipy>=1.11.0
+torch>=2.3.0
+matplotlib>=3.7.0
+scikit-learn>=1.3.0

@@ -12,7 +12,7 @@ def train_model(model: torch.nn.Module, train_loader: torch.utils.data.DataLoade
 
     model.to(device)
     criterion = torch.nn.MSELoss()
-    optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+    optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate, weight_decay=1e-5)
 
     model.train()
 
@@ -24,7 +24,7 @@ def train_model(model: torch.nn.Module, train_loader: torch.utils.data.DataLoade
             pred = model(batch_x)
             loss = criterion(pred, batch_y)
             loss.backward()
-            torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0) ### JUSTIFY ###
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 0.1)
             optimizer.step()
 
             epoch_loss += loss.item() * batch_x.size(0)

@@ -81,11 +81,13 @@ def create_stock_dataloader(stock_csv: str, metadata_csv: str, seq_len: int=100,
 
     return {
         'train_loader': train_loader,
-        'eval_loader': eval_loader,
+        'train_dataset': train_dataset,
         'train_tickers': train_tickers,
-        'eval_tickers': eval_tickers,
-        'eval_details': eval_details,
         'train_scalers' : scalers,
+        'eval_loader': eval_loader,
+        'eval_dataset': eval_dataset,
+        'eval_tickers': eval_tickers,
         'eval_scalers' : eval_scalers,
+        'eval_details': eval_details,
         'seq_len' : seq_len
     }
